@@ -212,3 +212,93 @@ Math.randomInt = function (min, max) {
 };
 
 console.log(Math.randomInt(10, 20));
+
+// Date
+const date = new Date()
+console.log(date)
+
+// month 는 zero-based
+const d1 = new Date(2022, 11, 17, 12, 57, 30)
+console.log(d1)
+
+const d2 = new Date('Wed Feb 07 2024 08:25:04 GMT+0900 (한국 표준시)')
+console.log(d2)
+console.log(d2.getFullYear())
+
+// .getFullYear() / .setFullYear()
+// 날짜 인스턴스의 연도를 반환하거나 지정
+
+const date2 = new Date()
+console.log(date2.getFullYear())
+
+date2.setFullYear(2024)
+console.log(date2.getFullYear())
+console.log(date2)
+
+// .getMonth() / .setMonth()
+// 날짜 인스턴스의 월을 반환하거나 지정
+// 0부터 시작(zero-based numbering)
+const date3 = new Date()
+
+console.log(date3.getMonth())
+
+date3.setMonth(0)
+console.log(date3.getMonth())
+console.log(date3)
+
+// .getDate() / .setDate()
+// 날짜 인스턴스의 일을 반환하거나 지정
+
+const date4 = new Date()
+
+console.log(date4.getDate())
+date4.setDate(25)
+console.log(date4.getDate())
+console.log(date4)
+
+// .getHours() / .setHours()
+// 날짜 인스턴스의 시간을 반환하거나 지정
+
+const date5 = new Date()
+console.log(date5.getHours())
+date5.setHours(17)
+console.log(date5)
+
+// .getMinutes() / .setMinutes()
+// .getSeconds() / .setSeconds()
+
+// .getDay()
+// 날짜 인스턴스의 요일을 반환
+const date6 = new Date()
+const day = date6.getDay()
+
+// .getTime() / .setTime()
+/// 1970-01-01 00:00:00 (유닉스타임)부터 경과한, 
+// 날짜 인스턴스의 밀리초(ms)로 반환하거나 지정
+const date7 = new Date()
+console.log(date7.getTime())
+
+Date.prototype.isAfter = function(date) {
+    const a = this.getTime()
+    const b = date.getTime()
+    return a > b
+}
+
+const d3 = new Date('Wed Feb 07 2024 08:25:04 GMT+0900 (한국 표준시)')
+const d4 = new Date('Wed Feb 07 2025 08:25:04 GMT+0900 (한국 표준시)')
+
+console.log(d3.isAfter(d4))
+console.log(d4.isAfter(d3))
+
+// Date.now()
+// 1970-01-01 00:00:00 (유닉스 타임)부터 경과한 
+// 메소드가 호출될 때의 밀리초(ms) 로 반환
+
+const time = new Date().getTime()
+console.log(Date.now())
+console.log(time)
+
+setTimeout(() => {
+    console.log(Date.now())
+    console.log(time)
+},1000)

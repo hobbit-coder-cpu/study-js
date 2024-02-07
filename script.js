@@ -130,6 +130,66 @@ console.log(users2.includes(neo))
 
 // 자료형의 2가지 타입 : 원시형 / 참조형(객체, 배열, 함수)
 
+// .join()
+// 대상 배열의 모든 요소를 구분자로 연결한 문자를 반환
+
+const arr10 = ['Apple', 'Banana', 'Cherry']
+console.log(arr10.join()) // = arr10.join(',')
+console.log(arr10.join(', '))
+console.log(arr10.join(' / '))
+
+// .map()
+// 대상 배열의 길이만큼 주어진 콜백을 실행하고 콜백의 밤환 값을 모아 
+// 새로운 배열을 반환
+
+const numbers2 = [1, 2, 3, 4]
+const newNumbers = numbers2.map(item => item * 2)
+console.log(newNumbers)
+
+const users3 = [
+    {name: 'Neo', age: 85},
+    {name: 'Amy', age: 22},
+    {name: 'Lewis', age: 11}
+]
+
+const newUsers = users3.map(user => 
+    ({
+        ...user,
+        isValid: true,
+        email: null
+    })
+)
+
+console.log(newUsers)
+
+// .pop()
+// 대상 배열에서 마지막 요소를 제거하고 그 요소를 반환
+// 대상 배열 원본이 변경됨
+
+const fruits2 = ['Apple', 'Banana', 'Cherry']
+console.log(fruits2.pop())
+console.log(fruits2)
+
+// .push()
+// 대상 배열의 마지막에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환
+// 대상 배열 원복이 변경됨
+
+const fruits3 = ['Apple', 'Banana', 'Cherry']
+const newLength = fruits3.push('Orange')
+console.log(newLength)
+console.log(fruits3)
+
+fruits3.push('Mango', 'Strawberry')
+console.log(fruits3)
+
+// .reduce()
+// 대상 배열의 길이만큼 주어진 콜백을 실행하고, 마지막에 호출되는 콜밸의 반환값을 반환
+// 각 콜백의 반환 값은 다음 콜백으로 전달
+
+const numbers3 = [1, 2, 3]
+const sum = numbers3.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+console.log(sum)
+
 
 
 

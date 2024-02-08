@@ -1,6 +1,6 @@
-// 모듈(Module)이란 특정 데이터들의 집합(파일)
-// 모듈 가져오기(Import), 내보내기(Export)
+// 이름 가져오기
+import * as ABC from './module.js'
 
-import { hello } from './module.js'
-console.log(hello)
+console.log(ABC)
+console.log(ABC.str)
 

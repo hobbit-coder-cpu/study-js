@@ -1,3 +1,5 @@
+// import 키워드는 파일(모듈)의 최상단에 작성 해야함.
+
 /*************************** 
     #1 default
 *****************************/
@@ -30,6 +32,7 @@ export function hello2() {}
 /*************************** 
     #3 이름 바꿔 내보내기 (as)
 *****************************/
+// 가져오기
 // import {str as xyz, arr, hello as h, hello2} from './module.js'
 // console.log(xyz)
 
@@ -37,9 +40,42 @@ export function hello2() {}
 /*************************** 
     #4 모든 데이터를 한번에 내보내기 (*)
 *****************************/
+
+// 가져오기
 // import * as ABC from './module.js'
 // console.log(ABC) // Module {...}
-console.log(ABC.str)
+// console.log(ABC.str)
+
+
+/*************************** 
+    #5 동적으로 내보내기 (import().then())
+*****************************/
+// 가져오기
+// import('./module.js').then((abc) => {
+//     console.log(abc) // Module {...}
+// })
+
+// 가져오기 #2
+// const abc = await import('./module.js')
+
+/*************************** 
+    #6 가져오자마자 내보내기(모듈 모으기) (export from)
+*****************************/
+/*
+-- utils.js
+export {a} from './a.js'
+export {b} from './b.js'
+
+-- a.js
+export const a = () => 123
+
+-- b.js
+export const b = () => 456
+
+-- main.js
+import {a, b} from './utils.js'
+
+*/
 
 
 

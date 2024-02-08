@@ -1,6 +1,4 @@
-// 이름 가져오기
-import * as ABC from './module.js'
+import { a, b} from './utils.js'
 
-console.log(ABC)
-console.log(ABC.str)
-
+console.log(a())
+console.log(b())

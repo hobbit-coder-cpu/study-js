@@ -72,3 +72,20 @@ const wrap3 = async () => {
 }
 
 wrap3()
+
+const titles = ['frozen', 'avengers', 'avatar']
+
+// async 컨트롤이 안됨 
+// titles.forEach(async title => {
+//     const movies = await getMovies(title)
+//     console.log(title, movies)
+// })
+
+const wrap4 = async () => {
+    for(const title of titles) {
+        const movies = await getMovies(title)
+        console.log(title, movies)
+    }
+}
+
+wrap4()

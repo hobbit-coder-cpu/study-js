@@ -79,8 +79,12 @@ console.log(el.textContent)
 const el8 = document.querySelector('.parent')
 console.log(el8.innerHTML)
 
-el8.innerHTML = '<span style="color: red;">Hello</span>'
-
+/* Comment Tagged  Template*/
+el8.innerHTML =/* html */`
+<div style="border: 4px solid">
+    <span style="color: red;">Hello</span>
+    <span style="color: blue;">Hello</span>
+</div>`
 
 
 

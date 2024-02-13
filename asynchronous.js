@@ -43,20 +43,4 @@ const getMovies = movieName => {
     })
 }
 
-const titles = ['frozen', 'avengers', 'avatar']
-
-// async 컨트롤이 안됨 
-// titles.forEach(async title => {
-//     const movies = await getMovies(title)
-//     console.log(title, movies)
-// })
-
-const wrap = async () => {
-    for(const title of titles) {
-        const movies = await getMovies(title)
-        console.log(title, movies)
-    }
-}
-
-wrap()
 

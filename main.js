@@ -1,27 +1,54 @@
-// #7 window.getComputedStyle()
-// 요소에 적용된 스타일 객체를 반환
+// Map
+// 객체와 유사하지만
+// 객체는 키로 문자열 또는 심볼값만 가능하지만 
+// Map은 객체를 포함한 모든 값 가능
 
-const el7 = document.querySelector('.child')
-const styles = window.getComputedStyle(el7)
-// globalThis.getComputedStyle(el7)
+const map = new Map()
 
-console.log(styles.width)
-console.log(styles.fontSize)
+// 키와 값의 쌍으로 이루어진 이터러블을 인자로
+const map1 = new Map([['k1', 'v1'], ['k2', 'v2']])
+console.log(map1)
 
-// #8 E.getAttribute() / E.setAttribute()
-// 요소에서 특정 속성 값을 얻거나 지정
-// 속성은 HTML 에서는 Attribute
-// 속성은 CSS 에서는 Property
+const map2 = new Map([['k1', 'v1'], ['k2', 'v2'], ['k1', 'k3']])
+const {size} = map2
+console.log(map2)
+console.log(size)
 
-const el8 = document.querySelector('.child')
-el8.setAttribute('title', 'Hello World!')
-console.log(el8.getAttribute('title'))
+// set
+const map3 = new Map()
+map3
+    .set('key1', 'value1')
+    .set(1, 100)            // method chaining
+console.log(map3)
 
-// #9 E.hasAttribute() / E.removeAttribute()
-// 요소에서 특정 속성을 확인하거나 제거 
+// 
+const map4 = new Map()
+const o1 = {name: 'minjungwon'}
+const o2 = {name: 'minjungwon'}
+const o3 = o1;
+o3.name = 'min'
 
-const el = document.querySelector('.child')
-console.log(el.hasAttribute('class'))
+map4   
+    .set(o1, 'v1')
+    .set(o2, 'v2')
+    .set(o3, 'v3') // 키 중복, 갱신
 
-el.removeAttribute('class')
-console.log(el.hasAttribute('class'))
+console.log(map4)
+
+// get
+console.log(map4.get(o1))
+
+// has
+const o4 = {}
+console.log(map4.has(o4))
+
+// delete
+const lee = {name: 'lee'}
+const kim = {name: 'kim'}
+
+const map5 = new Map([[lee, 'v1'], [kim, 'v2']])
+console.log(map5)
+
+lee.name = 'LEE'
+console.log(map5)
+

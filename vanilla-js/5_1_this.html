@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="this.style.backgroundColor='red'">클릭</button>
+    <button onclick="callFunc(this);">클릭2</button>
+    <select name="" id="" onchange="changeSelect(this);">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <script>
+      function callFunc(obj) {
+        console.log(obj);
+      }
+
+      function changeSelect(obj) {
+        console.log(obj.value);
+      }
+    </script>
+  </body>
+</html>

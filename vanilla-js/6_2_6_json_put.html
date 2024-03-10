@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <script>
+      fetch("http://localhost:3000/posts/3439", {
+        method: "PUT",
+        body: JSON.stringify({
+          id: "3439",
+          title: "The Great Jeremy",
+          author: "Jeremy",
+        }),
+        headers: {
+          "content-type": "application/json;charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    </script>
+  </body>
+</html>

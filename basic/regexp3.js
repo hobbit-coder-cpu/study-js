@@ -1,7 +1,7 @@
 // 정규 표현식(RegExp, Regular Expression)
 
 // 옵션
-// g - 모든 문자 일치(Global)
+// g - 모든 문자 일치(Global), 일치하는 모든 문자 찾기. 예) 문자열 내 모든 my 찾기.
 // i - 영어 대소문자를 구분 않고 일치(Ignore case)
 // m - 여러 줄 일치(Multi line), 각각의 줄을 시작과 끝으로 인식!
 

@@ -1,0 +1,25 @@
+<!-- 
+   change 이벤트가 발생하는 DOM요소는 select, input type="checkbox",
+   input type="radio"
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="sel" onchange="doChange(event)">
+      <option value="KO">Korea</option>
+      <option value="CN">China</option>
+      <option value="JP">Japan</option>
+    </select>
+    <script>
+      function doChange(event) {
+        console.log(event.target.value);
+      }
+    </script>
+  </body>
+</html>

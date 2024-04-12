@@ -45,3 +45,39 @@ console.log("3.", text3.match(/https?:\/\/[\w./]+/g)) // http:// ~ 또는 https:
 // 일치하는 문자 수의 최솟값을 설정할 수 있다.
 // 정확히 원하는 만큼만 일치하도록 문자 수를 정희할 수 있다.
 // 구간은 중괄호({})안에 표시.
+
+// 정확한 구간 찾기
+const text4 = `
+<BODY BGCOLOR="#336633" TEXT="#FFFFFF"
+  MARGINWIDTH="0" MARGINHEIGHT="0"
+  TOPMARGIN="0" LEFTMARGIN="0">
+`
+console.log("4.", text4.match(/#[a-fA-F0-9]{6}/g))
+
+// 범위 구간 찾기
+const text5 = `
+4/8/03
+10-6-2004
+2/2/2
+01-01-01
+4-8/03
+`
+
+console.log("5.", text5.match(/\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4}/g)) // 구분자가 달라도 체크되는 문제가 있는 정규식(4-8/03) 
+
+// 과하게 일치하는 상황 방지하기
+// 애스터리스트(*), 더하기(+) 같은 메타 문자가 탐욕적(greedy)이기 때문에
+// 가능한한 가장 큰 덩어리를 찾으려 한다.
+
+//수량자(quantifier)
+// 탐욕적 수량자 VS 게으른 수량자
+//      *        VS       *?  
+//      +        VS       +?
+//      {n,}     VS       {n,}?
+
+const text6 = `
+This offer is not available to customers
+living in <B>AK</B> and <B>HI</B>.
+`
+console.log("6-1", text6.match(/<[bB]>.*<\/[bB]>/g))   // 탐욕적 수량자
+console.log("6-2", text6.match(/<[bB]>.*?<\/[/bB]>/g))  // 게으른 수량자

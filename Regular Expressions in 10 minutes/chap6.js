@@ -2,7 +2,7 @@
 
 // 단어 경계 지정하기
 // \b : boundary
-// \b는 일반적으로 단어의 일부로 사용하는 문자(\w)와 그외 문자 사이에 있는 위치와 일치시킨다.
+// \b는 일반적으로 단어의 일부로 사용하는 문자(\w)와 그외 문자(\W) 사이에 있는 위치와 일치시킨다.
 const text = `
 The cat scattered his food all over the room
 `

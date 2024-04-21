@@ -157,7 +157,7 @@ if (isShow2) {
 } else {
 }
 
-// 6. DOM(Document Object Model) API(1)(2)
+// 6~7. DOM(Document Object Model) API(1)(2)
 let boxEl = document.querySelector(".box");
 console.log(boxEl);
 
@@ -174,4 +174,17 @@ console.log(boxEls);
 boxEls.forEach(function (boxEl, index) {
   boxEl.classList.add(`order-${index + 1}`);
   console.log(index, boxEl);
+  console.log(boxEl.textContent);
+  boxEl.textContent = "order";
+  console.log(boxEl.textContent);
 });
+
+// 8. 메소드 체이닝
+const a1 = "Hello~";
+// split: 문자열를 인수 기준으로 쪼개서 배열로 반환
+// reverse:  배열을 뒤집기
+// join: 배열을 인수 기준으로 문자열로 병합해 반환
+const b1 = a1.split("").reverse().join("");
+
+console.log(a1);
+console.log(b1);
